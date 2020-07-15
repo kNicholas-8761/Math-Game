@@ -20,9 +20,14 @@ document.getElementById("startreset").onclick = function () {
 
     document.getElementById("timeremaining").style.display = "block";
 
-     //change button to reset
+    //change button to reset
     document.getElementById("startreset").innerHTML = "Reset Game";
 
+    //start countdown
+
+    startCountdown();  
+  }
+  function startCountdown(){
     
   }
 };
