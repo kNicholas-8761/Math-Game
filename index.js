@@ -9,14 +9,15 @@ document.getElementById("startreset").onclick = function () {
   } else {
     //change mode to playing
 
-      playing = true;
+    playing = true;
 
     //set score to 0
 
     score = 0;
     document.getElementById("scorevalue").innerHTML = score;
 
+    //show countdown box
 
-
+    document.getElementById("timeremaining").style.display = "block";
   }
 };
