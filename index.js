@@ -6,5 +6,8 @@ document.getElementById("startreset").onclick = function () {
   if (playing == true) {
     location.reload(); //reload page
   } else {
+    //change mode to playing
+
+    playing = true;
   }
 };
