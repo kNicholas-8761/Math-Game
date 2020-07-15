@@ -19,5 +19,10 @@ document.getElementById("startreset").onclick = function () {
     //show countdown box
 
     document.getElementById("timeremaining").style.display = "block";
+
+     //change button to reset
+    document.getElementById("startreset").innerHTML = "Reset Game";
+
+    
   }
 };
