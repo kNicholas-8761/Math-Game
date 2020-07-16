@@ -36,7 +36,13 @@ document.getElementById("startreset").onclick = function () {
     action = setInterval(function () {
       timeremaining -= 1;
       document.getElementById("timeremainingvalue").innerHTML = timeremaining;
+      if (timeremaining == 0) {
+        stopCountdown()
+      }
 
   }, 1000);
 }
+ function stopCountdown(){
+   clearInterval(action);
+ }
 };
