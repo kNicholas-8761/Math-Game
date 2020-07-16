@@ -22,6 +22,9 @@ document.getElementById("startreset").onclick = function () {
 
     document.getElementById("timeremaining").style.display = "block";
 
+    timeremaining = 60;
+    document.getElementById("timeremainingvalue").innerHTML = timeremaining;
+
     //change button to reset
     document.getElementById("startreset").innerHTML = "Reset Game";
 
@@ -32,6 +35,7 @@ document.getElementById("startreset").onclick = function () {
   function startCountdown(){
     action = setInterval(function () {
       timeremaining -= 1;
+      document.getElementById("timeremainingvalue").innerHTML = timeremaining;
 
   }, 1000);
 }
