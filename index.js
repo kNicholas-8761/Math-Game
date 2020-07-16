@@ -1,5 +1,6 @@
 var playing = false;
 var score;
+var action;
 
 document.getElementById("startreset").onclick = function () {
   //if we are playing
@@ -28,6 +29,8 @@ document.getElementById("startreset").onclick = function () {
     startCountdown();  
   }
   function startCountdown(){
-    
-  }
+    action = setInterval(function () {
+
+  }, 1000);
+}
 };
