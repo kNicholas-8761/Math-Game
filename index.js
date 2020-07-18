@@ -76,5 +76,17 @@ document.getElementById("startreset").onclick = function () {
     document.getElementById("question").innerHTML = x + "x" + y;
     var correctPosition = 1 + Math.round(3 * Math.random());
     document.getElementById("box" + correctPosition).innerHTML = correctAnswer;
-  }
+
+    //fill other boxes with wrong answers
+
+    var answers = [correctAnswer];
+
+    for (i = 1; i < 5; i++) {
+      if (i != correctPosition) {
+        wrongAnswer = (1 + Math.round(9 * Math.random())) * (1 + Math.round(9 * Math.random())); 
+        document.getElementById("box" + i).innerHTML = wrongAnswer;
+      }
+        }
+      
+}
 };
