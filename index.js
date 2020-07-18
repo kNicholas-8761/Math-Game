@@ -40,6 +40,7 @@ document.getElementById("startreset").onclick = function () {
         stopCountdown()
         document.getElementById("gameOver").style.display = "block";
         document.getElementById("gameOver").innerHTML = "<p>Game over!</p><p>Your score is " + score + ".</p>"; 
+        document.getElementById("timeremaining").style.display = "none";
       }
 
   }, 1000);
