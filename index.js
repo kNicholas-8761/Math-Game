@@ -2,6 +2,7 @@ var playing = false;
 var score;
 var action;
 var timeremaining;
+var correctAnswer;
 
 document.getElementById("startreset").onclick = function () {
   //if we are playing
@@ -72,5 +73,6 @@ document.getElementById("startreset").onclick = function () {
   function generateQA() {
     var x = 1 + Math.round(9 * Math.random());
     var y = 1 + Math.round(9 * Math.random());
+    correctAnswer = x * y;
   }
 };
