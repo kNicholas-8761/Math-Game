@@ -24,7 +24,7 @@ document.getElementById("startreset").onclick = function () {
 
     timeremaining = 5;
     document.getElementById("timeremainingvalue").innerHTML = timeremaining;
-    
+
     // Hide game over box
     hide("gameOver");
 
@@ -38,6 +38,7 @@ document.getElementById("startreset").onclick = function () {
     //generate a new Q&A
 
     generateQA();
+
   }
   function startCountdown() {
     action = setInterval(function () {
@@ -59,11 +60,17 @@ document.getElementById("startreset").onclick = function () {
   function stopCountdown() {
     clearInterval(action);
   }
+
   function show(id) {
     document.getElementById(id).style.display = "block";
   }
+
   function hide(id) {
     document.getElementById(id).style.display = "none";
   }
-  function generateQA() {}
+
+  function generateQA() {
+    var x = 1 + Math.round(9 * Math.random());
+    var y = 1 + Math.round(9 * Math.random());
+  }
 };
