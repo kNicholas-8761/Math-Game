@@ -39,7 +39,6 @@ document.getElementById("startreset").onclick = function () {
     //generate a new Q&A
 
     generateQA();
-
   }
   function startCountdown() {
     action = setInterval(function () {
@@ -75,5 +74,6 @@ document.getElementById("startreset").onclick = function () {
     var y = 1 + Math.round(9 * Math.random());
     correctAnswer = x * y;
     document.getElementById("question").innerHTML = x + "x" + y;
+    var correctPosition = 1 + Math.round(3 * Math.random());
   }
 };
