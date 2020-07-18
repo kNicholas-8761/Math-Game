@@ -22,7 +22,7 @@ document.getElementById("startreset").onclick = function () {
 
     document.getElementById("timeremaining").style.display = "block";
 
-    timeremaining = 60;
+    timeremaining = 5;
     document.getElementById("timeremainingvalue").innerHTML = timeremaining;
 
     //change button to reset
@@ -38,6 +38,7 @@ document.getElementById("startreset").onclick = function () {
       document.getElementById("timeremainingvalue").innerHTML = timeremaining;
       if (timeremaining == 0) {
         stopCountdown()
+        document.getElementById("gameOver").style.display = "block";
       }
 
   }, 1000);
