@@ -31,6 +31,10 @@ document.getElementById("startreset").onclick = function () {
     //start countdown
 
     startCountdown();
+
+    //generate a new Q&A
+
+    generateQA();
   }
   function startCountdown() {
     action = setInterval(function () {
@@ -56,5 +60,8 @@ document.getElementById("startreset").onclick = function () {
   }
   function hide(id) {
     document.getElementById(id).style.display = "none";
+  }
+  function(generateQA){
+    
   }
 };
