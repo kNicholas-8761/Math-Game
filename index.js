@@ -24,6 +24,9 @@ document.getElementById("startreset").onclick = function () {
 
     timeremaining = 5;
     document.getElementById("timeremainingvalue").innerHTML = timeremaining;
+    
+    // Hide game over box
+    hide("gameOver");
 
     //change button to reset
     document.getElementById("startreset").innerHTML = "Reset Game";
@@ -49,6 +52,7 @@ document.getElementById("startreset").onclick = function () {
         hide("correct");
         hide("wrong");
         playing = false;
+        document.getElementById("startreset").innerHTML = "Start Game";
       }
     }, 1000);
   }
@@ -61,7 +65,5 @@ document.getElementById("startreset").onclick = function () {
   function hide(id) {
     document.getElementById(id).style.display = "none";
   }
-  function(generateQA){
-    
-  }
+  function generateQA() {}
 };
