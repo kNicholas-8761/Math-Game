@@ -83,10 +83,15 @@ document.getElementById("startreset").onclick = function () {
 
     for (i = 1; i < 5; i++) {
       if (i != correctPosition) {
-        wrongAnswer = (1 + Math.round(9 * Math.random())) * (1 + Math.round(9 * Math.random())); 
-        document.getElementById("box" + i).innerHTML = wrongAnswer;
+        var wrongAnswer;
+        do {
+          wrongAnswer =
+            (1 + Math.round(9 * Math.random())) *
+            (1 + Math.round(9 * Math.random()));
+          document.getElementById("box" + i).innerHTML = wrongAnswer;
+        } while (wrongAnswer == correctAnswer);
+        
       }
-        }
-      
-}
+    }
+  }
 };
