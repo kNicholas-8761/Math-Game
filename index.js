@@ -74,5 +74,6 @@ document.getElementById("startreset").onclick = function () {
     var x = 1 + Math.round(9 * Math.random());
     var y = 1 + Math.round(9 * Math.random());
     correctAnswer = x * y;
+    document.getElementById("question").innerHTML = x + "x" + y;
   }
 };
