@@ -20,7 +20,7 @@ document.getElementById("startreset").onclick = function () {
 
     //show countdown box
 
-    document.getElementById("timeremaining").style.display = "block";
+    show("timeremaining");
 
     timeremaining = 5;
     document.getElementById("timeremainingvalue").innerHTML = timeremaining;
@@ -30,22 +30,31 @@ document.getElementById("startreset").onclick = function () {
 
     //start countdown
 
-    startCountdown();  
+    startCountdown();
   }
-  function startCountdown(){
+  function startCountdown() {
     action = setInterval(function () {
       timeremaining -= 1;
       document.getElementById("timeremainingvalue").innerHTML = timeremaining;
       if (timeremaining == 0) {
-        stopCountdown()
-        document.getElementById("gameOver").style.display = "block";
-        document.getElementById("gameOver").innerHTML = "<p>Game over!</p><p>Your score is " + score + ".</p>"; 
-        document.getElementById("timeremaining").style.display = "none";
+        stopCountdown();
+        show("gameOver");
+        document.getElementById("gameOver").innerHTML =
+          "<p>Game over!</p><p>Your score is " + score + ".</p>";
+        hide("timeremaining");
+        hide("correct");
+        hide("wrong");
+        playing = false;
       }
-
-  }, 1000);
-}
- function stopCountdown(){
-   clearInterval(action);
- }
+    }, 1000);
+  }
+  function stopCountdown() {
+    clearInterval(action);
+  }
+  function show(id) {
+    document.getElementById(id).style.display = "block";
+  }
+  function hide(id) {
+    document.getElementById(id).style.display = "none";
+  }
 };
