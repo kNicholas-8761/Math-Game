@@ -41,35 +41,37 @@ document.getElementById("startreset").onclick = function () {
     generateQA();
   }
 };
-//Clicking on an answer box
-document.getElementById("box1").onclick = function () {
-  if (playing == true) {
-    //yes
-    if (this.innerHTML == correctAnswer) {
-      //correct answer
+for (i = 1; i < 5; i++) {
+  //Clicking on an answer box
+  document.getElementById("box" + i).onclick = function () {
+    if (playing == true) {
+      //yes
+      if (this.innerHTML == correctAnswer) {
+        //correct answer
 
-      //increase score by 1
-      score++;
-      document.getElementById("scorevalue").innerHTML = score;
-      //hide wrong box and show correct box
-      hide("wrong");
-      show("correct");
-      setTimeout(function () {
-        hide("correct");
-      }, 1000);
-      
-       //Generate new Q&A
-       
-      generateQA();
-    } else {
-      hide("correct");
-      show("wrong");
-      setTimeout(function () {
+        //increase score by 1
+        score++;
+        document.getElementById("scorevalue").innerHTML = score;
+        //hide wrong box and show correct box
         hide("wrong");
-      }, 1000);
+        show("correct");
+        setTimeout(function () {
+          hide("correct");
+        }, 1000);
+
+        //Generate new Q&A
+
+        generateQA();
+      } else {
+        hide("correct");
+        show("wrong");
+        setTimeout(function () {
+          hide("wrong");
+        }, 1000);
+      }
     }
-  }
-};
+  };
+}
 
 function startCountdown() {
   action = setInterval(function () {
@@ -125,4 +127,4 @@ function generateQA() {
       answers.push(wrongAnswer);
     }
   }
-};
+}
