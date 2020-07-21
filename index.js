@@ -44,8 +44,18 @@ document.getElementById("startreset").onclick = function () {
 //Clicking on an answer box
 document.getElementById("box1").onclick = function () {
   if (playing == true) {//yes
-   
-  }
+    if (this.innerHTML == correctAnswer) {
+      //correct answer
+
+      //increase score by 1
+      score++;
+      document.getElementById("scorevalue").innerHTML = score;
+      //hide wrong box and show correct box
+      hide("wrong");
+      show("correct");
+
+
+}
 
 
   function startCountdown() {
