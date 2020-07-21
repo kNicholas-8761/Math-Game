@@ -40,6 +40,13 @@ document.getElementById("startreset").onclick = function () {
 
     generateQA();
   }
+}
+//Clicking on an answer box
+document.getElementById("box1").onclick = function () {
+
+}
+
+
   function startCountdown() {
     action = setInterval(function () {
       timeremaining -= 1;
@@ -73,7 +80,7 @@ document.getElementById("startreset").onclick = function () {
     var x = 1 + Math.round(9 * Math.random());
     var y = 1 + Math.round(9 * Math.random());
     correctAnswer = x * y;
-    document.getElementById("question").innerHTML = x + " x " + y;
+    document.getElementById("question").innerHTML = x + "x" + y;
     var correctPosition = 1 + Math.round(3 * Math.random());
     document.getElementById("box" + correctPosition).innerHTML = correctAnswer;
 
@@ -93,5 +100,5 @@ document.getElementById("startreset").onclick = function () {
         answers.push(wrongAnswer);
       }
     }
-  }
-};
+  };
+
