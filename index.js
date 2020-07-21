@@ -43,8 +43,9 @@ document.getElementById("startreset").onclick = function () {
 }
 //Clicking on an answer box
 document.getElementById("box1").onclick = function () {
-
-}
+  if (playing == true) {//yes
+   
+  }
 
 
   function startCountdown() {
