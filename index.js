@@ -23,7 +23,7 @@ document.getElementById("startreset").onclick = function () {
 
     show("timeremaining");
 
-    timeremaining = 60;
+    timeremaining = 10;
     document.getElementById("timeremainingvalue").innerHTML = timeremaining;
 
     // Hide game over box
