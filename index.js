@@ -5,61 +5,62 @@ var timeremaining;
 var correctAnswer;
 
 document.getElementById("startreset").onclick = function () {
-  //if we are playing
+  
+  //   IF WE ARE PLAYING
 
   if (playing == true) {
-    location.reload(); //reload page
+    location.reload(); //RELOAD PAGE
   } else {
-    //change mode to playing
+    //CHANGE MODE TO PLAYING
 
     playing = true;
 
-    //set score to 0
+    //SET SCORE TO 0
 
     score = 0;
     document.getElementById("scorevalue").innerHTML = score;
 
-    //show countdown box
+    //SHOW COUNTDOWN BOX
 
     show("timeremaining");
 
-    timeremaining = 10;
+    timeremaining = 60;
     document.getElementById("timeremainingvalue").innerHTML = timeremaining;
 
-    // Hide game over box
+    // HIDE GAME OVER BOX
     hide("gameOver");
 
     //change button to reset
     document.getElementById("startreset").innerHTML = "Reset Game";
 
-    //start countdown
+    //START COUNTDOWN
 
     startCountdown();
 
-    //generate a new Q&A
+    //GENERATE A NEW Q&A
 
     generateQA();
   }
 };
 for (i = 1; i < 5; i++) {
-  //Clicking on an answer box
+  //CLICKING ON AN ANSWER BOX
   document.getElementById("box" + i).onclick = function () {
     if (playing == true) {
-      //yes
+      //YES
       if (this.innerHTML == correctAnswer) {
-        //correct answer
+        //CORRECT ANSWER
 
-        //increase score by 1
+        //INCREASE SCORE BY 1
         score++;
         document.getElementById("scorevalue").innerHTML = score;
         //hide wrong box and show correct box
         hide("wrong");
         show("correct");
-        setTimeout(function () {
+        setTimeout(function() {
           hide("correct");
         }, 1000);
 
-        //Generate new Q&A
+        //GENERATE NEW Q&A
 
         generateQA();
       } else {
@@ -77,7 +78,7 @@ function startCountdown() {
   action = setInterval(function () {
     timeremaining -= 1;
     document.getElementById("timeremainingvalue").innerHTML = timeremaining;
-    if (timeremaining == 0) {
+    if (timeremaining == 0){
       stopCountdown();
       show("gameOver");
       document.getElementById("gameOver").innerHTML =
@@ -111,7 +112,7 @@ function generateQA() {
   var correctPosition = 1 + Math.round(3 * Math.random());
   document.getElementById("box" + correctPosition).innerHTML = correctAnswer;
 
-  //fill other boxes with wrong answers
+  //FILL OTHER BOXES WITH WRONG ANSWERS
 
   var answers = [correctAnswer];
 

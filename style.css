@@ -31,20 +31,26 @@ html {
   -webkit-box-shadow: 0px 4px 0px #9da853;
 }
 #correct {
+  position: absolute;
+  left: 250px;
   margin: 0px auto;
   width: 60px;
   background-color: #42e252;
   color: white;
   padding: 11px;
+  text-align: center;
   display: none;
 }
 
 #wrong {
+  position: absolute;
+  left: 250px;
   margin: 0px auto;
-  width: 65px;
+  width: 62px;
   background-color: #de401a;
   color: white;
   padding: 11px;
+  text-align: center;
   display: none;
 }
 #question {
@@ -143,7 +149,7 @@ html {
   width: 152px;
   padding: 10px;
   position: absolute;
-  top: 395px;
+  top: 430px;
   left: 400px;
   background-color: rgba(181, 235, 36, 0.8);
   border-radius: 3px;
@@ -186,5 +192,29 @@ html {
   }
   #choices {
     height: 80px;
+    margin-left: 30px;
+  }
+  #timeremaining {
+    width: 80px;
+    left: 290px;
+    top: 415px;
+    font-size: 8px;
+  }
+  #correct {
+    left: 150px;
+    padding: 6px;
+    text-align: center;
+  }
+  #wrong {
+    left: 150px;
+    padding: 6px;
+    text-align: center;
+  }
+
+  #startreset {
+    width: 78px;
+    padding: 5x;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin: 0 auto;
   }
 }
