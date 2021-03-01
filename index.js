@@ -44,36 +44,38 @@ document.getElementById("startreset").onclick = () =>{
 };
 for (i = 1; i < 5; i++) {
   //CLICKING ON AN ANSWER BOX
-  document.getElementById("box" + i).onclick = function () {
-    if (playing == true) {
-      //YES
-      if (this.innerHTML == correctAnswer) {
-        console.log(typeof correctAnswer);
-        //CORRECT ANSWER
-
-        //INCREASE SCORE BY 1
-        score++;
-        document.getElementById("scorevalue").innerHTML = score;
-        //HIDE WRONG BOX AND SHOW CORRECT BOX
-        hide("wrong");
-        show("correct");
-        setTimeout(() =>{
-          hide("correct");
-        }, 1000);
-
-        //GENERATE NEW Q&A
-
-        generateQA();
-      } else {
-        hide("correct");
-        show("wrong");
-        setTimeout(() =>{
+    const box = document.getElementById("box" + i) 
+    box.addEventListener('click',(e)=>{
+      if (playing == true) {
+        //YES
+        if ( e.target.innerHTML == correctAnswer) {
+          //CORRECT ANSWER
+  
+          //INCREASE SCORE BY 1
+          score++;
+          document.getElementById("scorevalue").innerHTML = score;
+          //HIDE WRONG BOX AND SHOW CORRECT BOX
           hide("wrong");
-        }, 1000);
+          show("correct");
+          setTimeout(() =>{
+            hide("correct");
+          }, 1000);
+  
+          //GENERATE NEW Q&A
+  
+          generateQA();
+        } else {
+          hide("correct");
+          show("wrong");
+          setTimeout(() =>{
+            hide("wrong");
+          }, 1000);
+        }
       }
-    }
+    })
+   
   };
-}
+
 
   const startCountdown = () =>{
   action = setInterval(() =>{
