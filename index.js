@@ -4,7 +4,7 @@ var action;
 var timeremaining;
 var correctAnswer;
 
-document.getElementById("startreset").onclick = function () {
+document.getElementById("startreset").onclick = () =>{
   
   //   IF WE ARE PLAYING
 
@@ -24,7 +24,7 @@ document.getElementById("startreset").onclick = function () {
 
     show("timeremaining");
 
-    timeremaining = 60;
+    timeremaining = 6;
     document.getElementById("timeremainingvalue").innerHTML = timeremaining;
 
     // HIDE GAME OVER BOX
@@ -48,15 +48,16 @@ for (i = 1; i < 5; i++) {
     if (playing == true) {
       //YES
       if (this.innerHTML == correctAnswer) {
+        console.log(typeof correctAnswer);
         //CORRECT ANSWER
 
         //INCREASE SCORE BY 1
         score++;
         document.getElementById("scorevalue").innerHTML = score;
-        //hide wrong box and show correct box
+        //HIDE WRONG BOX AND SHOW CORRECT BOX
         hide("wrong");
         show("correct");
-        setTimeout(function() {
+        setTimeout(() =>{
           hide("correct");
         }, 1000);
 
@@ -66,7 +67,7 @@ for (i = 1; i < 5; i++) {
       } else {
         hide("correct");
         show("wrong");
-        setTimeout(function () {
+        setTimeout(() =>{
           hide("wrong");
         }, 1000);
       }
@@ -74,8 +75,8 @@ for (i = 1; i < 5; i++) {
   };
 }
 
-function startCountdown() {
-  action = setInterval(function () {
+  const startCountdown = () =>{
+  action = setInterval(() =>{
     timeremaining -= 1;
     document.getElementById("timeremainingvalue").innerHTML = timeremaining;
     if (timeremaining == 0){
@@ -92,19 +93,16 @@ function startCountdown() {
   }, 1000);
 }
 
-function stopCountdown() {
+const stopCountdown = () => {
   clearInterval(action);
 }
 
-function show(id) {
-  document.getElementById(id).style.display = "block";
-}
+const show = id => document.getElementById(id).style.display = "block";
 
-function hide(id) {
-  document.getElementById(id).style.display = "none";
-}
+const hide = (id) =>document.getElementById(id).style.display = "none";
 
-function generateQA() {
+
+const generateQA = () =>{
   var x = 1 + Math.round(9 * Math.random());
   var y = 1 + Math.round(9 * Math.random());
   correctAnswer = x * y;
