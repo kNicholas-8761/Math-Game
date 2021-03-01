@@ -1,8 +1,8 @@
-var playing = false;
-var score;
-var action;
-var timeremaining;
-var correctAnswer;
+let playing = false;
+let score;
+let action;
+let timeremaining;
+let correctAnswer;
 
 document.getElementById("startreset").onclick = () =>{
   
@@ -24,7 +24,7 @@ document.getElementById("startreset").onclick = () =>{
 
     show("timeremaining");
 
-    timeremaining = 6;
+    timeremaining = 60;
     document.getElementById("timeremainingvalue").innerHTML = timeremaining;
 
     // HIDE GAME OVER BOX
@@ -105,20 +105,20 @@ const hide = (id) =>document.getElementById(id).style.display = "none";
 
 
 const generateQA = () =>{
-  var x = 1 + Math.round(9 * Math.random());
-  var y = 1 + Math.round(9 * Math.random());
+  let x = 1 + Math.round(9 * Math.random());
+  let y = 1 + Math.round(9 * Math.random());
   correctAnswer = x * y;
   document.getElementById("question").innerHTML = x + "x" + y;
-  var correctPosition = 1 + Math.round(3 * Math.random());
+  let correctPosition = 1 + Math.round(3 * Math.random());
   document.getElementById("box" + correctPosition).innerHTML = correctAnswer;
 
   //FILL OTHER BOXES WITH WRONG ANSWERS
 
-  var answers = [correctAnswer];
+  let answers = [correctAnswer];
 
   for (i = 1; i < 5; i++) {
     if (i != correctPosition) {
-      var wrongAnswer;
+      let wrongAnswer;
       do {
         wrongAnswer =
           (1 + Math.round(9 * Math.random())) *
