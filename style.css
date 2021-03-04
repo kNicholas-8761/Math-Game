@@ -1,9 +1,6 @@
-html {
+body {
   height: 100%;
-  background: radial-gradient(circle, #fff, #ccc);
-  background: -webkit-radial-gradient(circle, #fff, #ccc);
-  background: -o-radial-gradient(circle, #fff, #ccc);
-  background: -moz-radial-gradient(circle, #fff, #ccc);
+  background-image: linear-gradient(-225deg, #473B7B 0%, #3584A7 51%, #30D2BE 100%);
 }
 #container {
   max-width: 550px;
@@ -185,7 +182,7 @@ html {
     left: 45px;
   }
   .box {
-    width: 50px;
+    width: 45px;
     height: 50px;
     margin-right: 0px;
     line-height: 50px;
