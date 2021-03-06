@@ -1,14 +1,15 @@
-body {
+html {
   height: 100%;
-  background-image: linear-gradient(-225deg, #473B7B 0%, #3584A7 51%, #30D2BE 100%);
+  background-image: linear-gradient(to right, #243949 0%, #517fa4 100%);
 }
 #container {
   max-width: 550px;
+  min-height: 460px;
   height: auto;
   width: auto;
   background-color: #9dd2ea;
   margin: 100px auto;
-  padding: 20px;
+  padding: 8px;
   border-radius: 10px;
   box-shadow: 0px 4px 0px 0px #009de4;
   -moz-box-shadow: 0px 4px 0px 0px #009de4;
@@ -145,9 +146,7 @@ body {
 #timeremaining {
   width: 152px;
   padding: 10px;
-  position: absolute;
-  top: 430px;
-  left: 400px;
+  float: right;
   background-color: rgba(181, 235, 36, 0.8);
   border-radius: 3px;
   box-shadow: 0px 4px rgba(0, 0, 0, 0.2);
@@ -155,6 +154,9 @@ body {
   -webkit-box-shadow: 0px 4px rgba(0, 0, 0, 0.2);
   /*    visibility: hidden;*/
   display: none;
+  word-wrap: break-word;
+  text-align: center;
+  line-height: 1.3;
 }
 
 #gameOver {
@@ -175,27 +177,32 @@ body {
   display: none;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 580px) {
+  #container {
+    min-height: 420px;
+  }
   #gameOver {
     font-size: 1.5em;
     line-height: 50px;
     left: 45px;
   }
   .box {
-    width: 45px;
+    width: 50px;
     height: 50px;
     margin-right: 0px;
     line-height: 50px;
   }
   #choices {
     height: 80px;
-    margin-left: 30px;
+    /* margin: 30px auto; */
+    display: flex;
+    justify-content: center;
   }
   #timeremaining {
-    width: 80px;
-    left: 290px;
-    top: 415px;
-    font-size: 8px;
+    width: 70px;
+    font-size: 10px;
+    line-height: 1;
+    padding-bottom: 8px;
   }
   #correct {
     left: 150px;

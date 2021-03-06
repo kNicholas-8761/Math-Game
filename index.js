@@ -48,9 +48,9 @@ for (i = 1; i < 5; i++) {
     box.addEventListener('click',(e)=>{
       if (playing == true) {
         //YES
+        //CORRECT ANSWER
         if ( e.target.innerHTML == correctAnswer) {
-          //CORRECT ANSWER
-  
+          document.getElementById("correctSound").play()
           //INCREASE SCORE BY 1
           score++;
           document.getElementById("scorevalue").innerHTML = score;
@@ -65,6 +65,7 @@ for (i = 1; i < 5; i++) {
   
           generateQA();
         } else {
+          document.getElementById("wrongSound").play()
           hide("correct");
           show("wrong");
           setTimeout(() =>{
