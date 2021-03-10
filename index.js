@@ -42,6 +42,8 @@ document.getElementById("startreset").onclick = () =>{
     generateQA();
   }
 };
+
+
 for (i = 1; i < 5; i++) {
   //CLICKING ON AN ANSWER BOX
     const box = document.getElementById("box" + i) 
@@ -50,7 +52,7 @@ for (i = 1; i < 5; i++) {
         //YES
         //CORRECT ANSWER
         if ( e.target.innerHTML == correctAnswer) {
-          document.getElementById("correctSound").play()
+          correct()
           //INCREASE SCORE BY 1
           score++;
           document.getElementById("scorevalue").innerHTML = score;
@@ -65,7 +67,7 @@ for (i = 1; i < 5; i++) {
   
           generateQA();
         } else {
-          document.getElementById("wrongSound").play()
+          wrong()
           hide("correct");
           show("wrong");
           setTimeout(() =>{
@@ -76,8 +78,16 @@ for (i = 1; i < 5; i++) {
     })
    
   };
-
-
+  const correct =() =>{
+    let audio = new Audio('/audio/correct.mp3');
+    audio.play()
+  }
+  
+  const wrong =() =>{
+    let audio = new Audio('/audio/wrong.mp3');
+    audio.play()
+  }
+  
   const startCountdown = () =>{
   action = setInterval(() =>{
     timeremaining -= 1;
