@@ -4,8 +4,12 @@ let action;
 let timeremaining;
 let correctAnswer;
 
-document.getElementById("startreset").onclick = () =>{
-  
+let startRest = document.getElementById('startreset');
+let scoreValue = document.getElementById("scorevalue");
+let timeremainingValue= document.getElementById("timeremainingvalue");
+
+startRest.addEventListener('click',()=>{
+
   //   IF WE ARE PLAYING
 
   if (playing == true) {
@@ -18,20 +22,20 @@ document.getElementById("startreset").onclick = () =>{
     //SET SCORE TO 0
 
     score = 0;
-    document.getElementById("scorevalue").innerHTML = score;
+    scoreValue.innerHTML = score;
 
     //SHOW COUNTDOWN BOX
 
     show("timeremaining");
 
     timeremaining = 60;
-    document.getElementById("timeremainingvalue").innerHTML = timeremaining;
+    timeremainingValue.innerHTML = timeremaining;
 
     // HIDE GAME OVER BOX
     hide("gameOver");
 
     //change button to reset
-    document.getElementById("startreset").innerHTML = "Reset Game";
+    startRest.innerHTML = "Reset Game";
 
     //START COUNTDOWN
 
@@ -41,7 +45,9 @@ document.getElementById("startreset").onclick = () =>{
 
     generateQA();
   }
-};
+});
+
+  
 
 
 for (i = 1; i < 5; i++) {
@@ -55,7 +61,7 @@ for (i = 1; i < 5; i++) {
           correct()
           //INCREASE SCORE BY 1
           score++;
-          document.getElementById("scorevalue").innerHTML = score;
+          scoreValue.innerHTML = score;
           //HIDE WRONG BOX AND SHOW CORRECT BOX
           hide("wrong");
           show("correct");
@@ -91,7 +97,7 @@ for (i = 1; i < 5; i++) {
   const startCountdown = () =>{
   action = setInterval(() =>{
     timeremaining -= 1;
-    document.getElementById("timeremainingvalue").innerHTML = timeremaining;
+    timeremainingValue.innerHTML = timeremaining;
     if (timeremaining == 0){
       stopCountdown();
       show("gameOver");
@@ -101,7 +107,7 @@ for (i = 1; i < 5; i++) {
       hide("correct");
       hide("wrong");
       playing = false;
-      document.getElementById("startreset").innerHTML = "Start Game";
+      startRest.innerHTML = "Start Game";
     }
   }, 1000);
 }
